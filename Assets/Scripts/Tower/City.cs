@@ -8,8 +8,8 @@ public class City : Tower
 {
     void Start()
     {
-        // とりあえず仮の値
-        hp = 30.0f;
+        hp = 100.0f;
+        // TODO 当たり判定させるオブジェクトのタグが決まると初期値に入れる
         collision_name = "";
     }
 }
