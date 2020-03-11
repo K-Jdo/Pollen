@@ -3,14 +3,14 @@ guid: 1e0b351cb707b944387e4daea486745f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7153961758268899647
-    second: "\u30B9\u30AE\uFF3F\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3_0"
+      213: 297761703447499198
+    second: enemy_0
   - first:
-      213: -2422343080122430002
-    second: "\u30B9\u30AE\uFF3F\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3_1"
+      213: 3680619090928529440
+    second: enemy_1
   - first:
-      213: 1080739558861027274
-    second: "\u30B9\u30AE\uFF3F\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3_2"
+      213: -6810697999950630716
+    second: enemy_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -93,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u30B9\u30AE\uFF3F\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3_0"
+      name: enemy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -107,20 +107,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b253b0bbb267c4cbd2548e7782ced2
-      internalID: 7153961758268899647
+      spriteID: 2d5b7f29f975bc04789b9b9fe6c9ea42
+      internalID: 297761703447499198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u30B9\u30AE\uFF3F\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3_1"
+      name: enemy_1
       rect:
         serializedVersion: 2
         x: 0
         y: 65
         width: 32
-        height: 63
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cebd68365b83fd64f981d01044f5e930
-      internalID: -2422343080122430002
+      spriteID: 4cba489070a35a744b35e86a9ee52f6a
+      internalID: 3680619090928529440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u30B9\u30AE\uFF3F\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3_2"
+      name: enemy_2
       rect:
         serializedVersion: 2
         x: 0
@@ -149,8 +149,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eb7f300d51f4794aafd4ede5e2b6bcd
-      internalID: 1080739558861027274
+      spriteID: 4423fe822cf80864fb602cc130c5d44e
+      internalID: -6810697999950630716
       vertices: []
       indices: 
       edges: []
@@ -158,7 +158,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d355822da2b47e3429506f01f6904fb2
+    spriteID: 585d95bc764c25e4a8c118800b016586
     internalID: 0
     vertices: []
     indices: 
