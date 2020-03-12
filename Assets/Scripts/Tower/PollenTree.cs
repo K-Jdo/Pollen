@@ -6,9 +6,11 @@ using UnityEngine;
 // 木の処理
 public class PollenTree : Tower
 {
-    [SerializeField] private GameObject poolen;
+    [SerializeField] private GameObject tree_manager = default;
+    [SerializeField] private GameObject pollen = default;
+    TreeManager manager;
     const float COOL_TIME = 2.0f;   // 花粉のクールタイム
-    float poolen_time;              // 経過時間
+    float pollen_time;              // 経過時間
 
     void Start()
     {
@@ -16,18 +18,23 @@ public class PollenTree : Tower
         hp = 20.0f;
         collision_name = "";
 
-        poolen_time = 0.0f;
+        manager = tree_manager.GetComponent<TreeManager>();
+        pollen_time = 0.0f;
     }
 
     void Update()
     {
-        poolen_time += Time.deltaTime;
-
+        pollen_time += Time.deltaTime;
         // 2秒ごとに花粉を出現させる
-        if(poolen_time >= COOL_TIME)
+        if(pollen_time >= COOL_TIME)
         {
-            GameObject.Instantiate(poolen);
-            poolen_time = 0.0f;
+            Instantiate(pollen, transform);
+            pollen_time = 0.0f;
+        }
+
+        if(hp <= 0.0f)
+        {
+            manager.Tree_count--;
         }
     }
 }

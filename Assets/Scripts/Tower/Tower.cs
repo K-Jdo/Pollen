@@ -14,12 +14,7 @@ public class Tower : MonoBehaviour
         
         if (tag_name == collision_name)
         {
-            hp -= 1.0f;
-
-            if (hp <= 0.0f)
-            {
-                Destroy(gameObject);
-            }
+            hp -= 3.0f;
         }
     }
 }

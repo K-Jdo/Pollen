@@ -12,4 +12,21 @@ public class City : Tower
         // TODO 当たり判定させるオブジェクトのタグが決まると初期値に入れる
         collision_name = "";
     }
+
+    void Update()
+    {
+        if(hp <= 0.0f)
+        {
+            // ここにリザルト画面に飛ぶ処理を書く
+        }    
+    }
+
+    /// <summary>
+    /// 回復アイテムを使った処理
+    /// </summary>
+    public void UseHealItem()
+    {
+        // 仮の回復値
+        hp += 10.0f;
+    }
 }
