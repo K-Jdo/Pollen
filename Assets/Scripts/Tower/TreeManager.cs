@@ -4,15 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 杉の木の管理を行うクラス
-public class TreeManager : MonoBehaviour
+public class TreeManager : SingletonMonoBehaviour<TreeManager>
 {
     [SerializeField] private GameObject tree = default;
     [SerializeField] private GameObject tree_folder = default;
     const int MAX_TREE = 20;    // とりあえず最大数は20個に
     public int Tree_count { get; set; }
+    public bool debug;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
+        if (debug) return;
+
         transform.position = new Vector3(-2.5f, 4.0f, 0.0f);    // 初期値
         Vector3 instance_point = transform.position;            // 木を生成する座標
         float point_shift = 0.25f;                              // どのくらいずらして生成するか
@@ -33,6 +38,7 @@ public class TreeManager : MonoBehaviour
     {
         if(Tree_count <= 0)
         {
+            ScreenManager.Instance.IsWin = true;
             // リザルト画面に遷移する
             Debug.Log("杉軍団全滅！");
         }

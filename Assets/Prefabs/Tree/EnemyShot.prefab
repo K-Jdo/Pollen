@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9104778505898219941}
   - component: {fileID: 8709289876746455164}
   - component: {fileID: 8082800976377189578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a63add6bc30cbe44a3e8db475393690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!58 &8082800976377189578
 CircleCollider2D:
   m_ObjectHideFlags: 0

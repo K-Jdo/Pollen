@@ -11,7 +11,6 @@ public class Tower : MonoBehaviour
     protected void OnCollisionEnter2D(Collision2D collision)
     {
         string tag_name = collision.gameObject.tag;
-        
         if (tag_name == collision_name)
         {
             hp -= 3.0f;

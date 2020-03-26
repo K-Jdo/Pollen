@@ -17,6 +17,7 @@ public class City : Tower
     {
         if(hp <= 0.0f)
         {
+            ScreenManager.Instance.IsWin = false;
             // ここにリザルト画面に飛ぶ処理を書く
         }    
     }
