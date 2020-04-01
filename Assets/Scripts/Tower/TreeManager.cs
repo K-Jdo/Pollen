@@ -42,5 +42,6 @@ public class TreeManager : SingletonMonoBehaviour<TreeManager>
             // リザルト画面に遷移する
             Debug.Log("杉軍団全滅！");
         }
+
     }
 }

@@ -29,20 +29,22 @@ public class Pollen : MonoBehaviour
         control1 = new Vector3(Random.Range(ScreenManager.Instance.Screen_min_size.x, ScreenManager.Instance.Screen_max_size.x),
             Random.Range(0.0f, transform.position.y), 0.0f);
 
+
         // 中継ポイント２
         // x座標:中継１と範囲は同じ。符号も同じにする
         // y座標:下から4分の1の地点以上ワールド座標0未満の地点からランダム
         float x = Random.Range(0.0f, ScreenManager.Instance.Screen_max_size.x);
         control2 = new Vector3(control1.x > 0.0f ? x : -x, Random.Range(ScreenManager.Instance.Screen_min_size.y / 2, 0.0f), 0.0f);
 
+
         // 終了位置は画面外にして到達すると消えるようにする
         // x座標：中継と符号は逆にする
         // y座標：
         x = Random.Range(0.0f, ScreenManager.Instance.Screen_max_size.x + 0.5f);
-        end = new Vector3(control1.x > 0.0f ? -x : x, ScreenManager.Instance.Screen_min_size.y - 0.5f);
+        end = new Vector3(control1.x > 0.0f ? -x : x, ScreenManager.Instance.Screen_min_size.y - 0.5f, 0.0f);
+
 
         elapsed = 0.0f;
-
         my_type = Random.value >= 0.5f ? AttackType.line : AttackType.curve;
     }
 
