@@ -89,4 +89,9 @@ public class Pollen : MonoBehaviour
 
         return Vector3.Lerp(q3, q4, t);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 9104778505898219941}
   - component: {fileID: 8709289876746455164}
   - component: {fileID: 8082800976377189578}
+  - component: {fileID: 2629262229313508521}
   m_Layer: 8
   m_Name: EnemyShot
-  m_TagString: Untagged
+  m_TagString: Pollen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1d6d813d3fa1cf34e8f0ff3cdf544aa7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ec2e99cf2ec3c643aed9b3fe277e878, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a63add6bc30cbe44a3e8db475393690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  line_speed: 5
+  curve_speed: 0.5
 --- !u!58 &8082800976377189578
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110,3 +112,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
+--- !u!50 &2629262229313508521
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994213716327026462}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

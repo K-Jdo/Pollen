@@ -10,14 +10,16 @@ public class City : Tower
     {
         hp = 100.0f;
         // TODO 当たり判定させるオブジェクトのタグが決まると初期値に入れる
-        collision_name = "";
+        collision_name = "Pollen";
     }
 
     void Update()
     {
+        Debug.Log(hp);
         if(hp <= 0.0f)
         {
             ScreenManager.Instance.IsWin = false;
+            Debug.Log("hpがなくなったよ!");
             // ここにリザルト画面に飛ぶ処理を書く
         }    
     }
