@@ -46,6 +46,12 @@ public class Pollen : MonoBehaviour
 
         elapsed = 0.0f;
         my_type = Random.value >= 0.5f ? AttackType.line : AttackType.curve;
+
+        //Debug.Log("start:" + start);
+        //Debug.Log("control1:" + control1);
+        //Debug.Log("control2:" + control2);
+        //Debug.Log("end:" + end);
+
     }
 
     void Update()
@@ -57,7 +63,8 @@ public class Pollen : MonoBehaviour
         else if (my_type == AttackType.curve)
         {
             elapsed += curve_speed * Time.deltaTime;
-            transform.position = BezierCurve(start, control1, control2, end, elapsed);
+           // transform.position = BezierCurve(start, control1, control2, end, elapsed);
+            transform.position = MyBezeirCurve(start, control1, control2, end, elapsed);
         }
 
         if (ScreenManager.Instance.OutOfScreen(transform.position) || elapsed > 1.0f)
@@ -68,7 +75,7 @@ public class Pollen : MonoBehaviour
     }
 
     /// <summary>
-    /// ベジェ曲線を使い弓なりに移動する
+    /// ベジェ曲線を使い弓なりに移動（Unity機能版）
     /// 今回は3次ベジェ曲線でより不規則な軌道にする
     /// (スタート位置、中継１、中継２、終了位置、経過地点）
     /// </summary>
@@ -89,6 +96,27 @@ public class Pollen : MonoBehaviour
 
         return Vector3.Lerp(q3, q4, t);
     }
+
+    /// <summary>
+    /// ベジェ曲線を使い弓なりに移動（自作版）
+    /// (スタート位置、中継１、中継２、終了位置、経過地点）
+    /// </summary>
+    /// <param name="p0"></param>
+    /// <param name="p1"></param>
+    /// <param name="p2"></param>
+    /// <param name="p3"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    Vector3 MyBezeirCurve(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
+    {
+        float a = 1 - t;
+
+        float px = a * a * a * p0.x + 3 * a * a * t * p1.x + 3 * a * t * t * p2.x + t * t * t * p3.x;
+        float py = a * a * a * p0.y + 3 * a * a * t * p1.y + 3 * a * t * t * p2.y + t * t * t * p3.y;
+
+        return new Vector3(px, py);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

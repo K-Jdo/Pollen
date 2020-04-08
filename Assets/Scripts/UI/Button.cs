@@ -29,6 +29,7 @@ public class Button : ButtonController
         else if(names[2] == name)
         {
             // タイトルシーンに遷移
+            Debug.Log("タイトルへ");
         }
     }
 }

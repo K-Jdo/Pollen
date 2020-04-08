@@ -15,7 +15,6 @@ public class City : Tower
 
     void Update()
     {
-        Debug.Log(hp);
         if(hp <= 0.0f)
         {
             ScreenManager.Instance.IsWin = false;
