@@ -7,7 +7,7 @@ using UnityEngine;
 public class PollenTree : Tower
 {
     [SerializeField] private GameObject pollen = default;
-    const float COOL_TIME = 2.0f;   // 花粉のクールタイム
+    float cool_time;   // 花粉のクールタイム
     float pollen_time;              // 経過時間
 
     void Start()
@@ -17,13 +17,15 @@ public class PollenTree : Tower
         collision_name = "Bullet";
 
         pollen_time = 0.0f;
+        // クールタイムはランダムに決定
+        cool_time = Random.Range(2.0f, 6.0f);
     }
 
     void Update()
     {
         pollen_time += Time.deltaTime;
         // 2秒ごとに花粉を出現させる
-        if(pollen_time >= COOL_TIME)
+        if(pollen_time >= cool_time)
         {
             Instantiate(pollen, transform);
             pollen_time = 0.0f;

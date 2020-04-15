@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-// 画面サイズの取得
+// 画面制御
 public class ScreenManager : SingletonMonoBehaviour<ScreenManager>
 {
     // ゲーム画面の大きさを格納する変数
