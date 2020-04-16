@@ -1,5 +1,5 @@
 ﻿// 製作者：塚野莉央
-// プレイヤーが爆弾を発射する処理
+// プレイヤーの攻撃・回復
 
 using System.Collections;
 using System.Collections.Generic;
@@ -7,38 +7,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public double hp = 100;
     public GameObject BombPrefab;
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        // 攻撃
-        if (Input.GetKeyDown("joystick button 1"))
+        //攻撃
+        if (collider.gameObject.tag == "Attack")
         {
-            Instantiate(BombPrefab, transform.position, Quaternion.identity);
+            if (Input.GetKeyDown("joystick button 0"))
+            {
+                Instantiate(BombPrefab, transform.position, transform.rotation);
+            }
         }
 
-        // 回復
-        if(Input.GetKeyDown("joystick button 4") && Input.GetKeyDown("joystick button 0"))
+        //回復
+        if (collider.gameObject.tag == "Heal")
         {
-            Debug.Log("Cure");
+            if (Input.GetKeyDown("joystick button 5") && Input.GetKeyDown("joystick button 0"))
+            {
+                hp *= 1.3;
+            }
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // 拠点に入ったとき
-        Debug.Log("Enter");
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        // 拠点にいるとき
-        Debug.Log("Stay");
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // 拠点から出たとき
-        Debug.Log("Exit");
     }
 }

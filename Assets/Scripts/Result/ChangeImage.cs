@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // UIイメージを変更する
-public class ChageImage : MonoBehaviour
+public class ChangeImage : MonoBehaviour
 {
     [SerializeField] private Sprite sprite = default;
     private void Awake()

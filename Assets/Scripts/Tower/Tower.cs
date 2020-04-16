@@ -21,6 +21,10 @@ public class Tower : MonoBehaviour
         string tag_name = collision.gameObject.tag;
         if (tag_name == collision_name)
         {
+            if(HitPoint <= 0.0f)
+            {
+                return;
+            }
             HitPoint -= 3.0f;
         }
     }

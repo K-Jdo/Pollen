@@ -5,7 +5,8 @@ using UnityEngine;
 
 // 街の処理
 public class City : Tower
-{    
+{
+    [SerializeField] private GameObject end = default;
     void Start()
     {
         HitPoint = 100.0f;
@@ -18,12 +19,10 @@ public class City : Tower
     {
         base.Update();
 
-        if(HitPoint <= 0.0f)
+        if (HitPoint <= 0.0f)
         {
             HitPoint = 0.0f;
-            ScreenManager.Instance.IsWin = false;
-            // 終了の音
-            //SoundManager.Instance.PlaySound(SoundManager.SoundName.end);
+            end.GetComponent<EndCount>().IsEnd = true;
         }
     }
 

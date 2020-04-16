@@ -38,7 +38,7 @@ public class TreeManager : SingletonMonoBehaviour<TreeManager>
             Image image = Instantiate(hp);
             image.rectTransform.SetParent(canvas.transform);
             obj.GetComponent<PollenTree>().SetImage(image, image_pos);
-            Debug.Log(image_pos);
+
             obj.transform.parent = tree_folder.transform;
             // 位置を更新
             instance_point.x += point_shift;

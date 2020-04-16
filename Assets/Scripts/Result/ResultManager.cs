@@ -23,7 +23,7 @@ public class ResultManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("joystick button 0"))
+        if (Input.GetKeyDown("joystick button 0"))
         {
             // タイトルシーンに戻る
             Debug.Log("タイトルに戻るよ！");
