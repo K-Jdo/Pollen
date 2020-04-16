@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389f296e059bab94dbc53edf8d131a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp_bar: {fileID: 2264720208572509376, guid: 55aa5aabef2b23c45b289717059dec26, type: 3}
   pollen: {fileID: 3994213716327026462, guid: d2bd620fd5beddc48acc11247f96c9b1, type: 3}
 --- !u!61 &7604547797054227767
 BoxCollider2D:

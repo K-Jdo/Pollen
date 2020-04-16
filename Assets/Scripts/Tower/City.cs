@@ -5,22 +5,26 @@ using UnityEngine;
 
 // 街の処理
 public class City : Tower
-{
+{    
     void Start()
     {
-        hp = 100.0f;
-        // TODO 当たり判定させるオブジェクトのタグが決まると初期値に入れる
+        HitPoint = 100.0f;
+        max_hp = 100.0f;
+        // 当たり判定させるオブジェクトのタグ
         collision_name = "Pollen";
     }
 
-    void Update()
+    protected override void Update()
     {
-        if(hp <= 0.0f)
+        base.Update();
+
+        if(HitPoint <= 0.0f)
         {
+            HitPoint = 0.0f;
             ScreenManager.Instance.IsWin = false;
-            Debug.Log("hpがなくなったよ!");
-            // ここにリザルト画面に飛ぶ処理を書く
-        }    
+            // 終了の音
+            //SoundManager.Instance.PlaySound(SoundManager.SoundName.end);
+        }
     }
 
     /// <summary>
@@ -29,6 +33,6 @@ public class City : Tower
     public void UseHealItem()
     {
         // 仮の回復値
-        hp += 10.0f;
+        HitPoint += 10.0f;
     }
 }
