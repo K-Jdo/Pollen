@@ -67,7 +67,7 @@ public class Pollen : MonoBehaviour
             transform.position = MyBezeirCurve(start, control1, control2, end, elapsed);
         }
 
-        if (ScreenManager.Instance.OutOfScreen(transform.position) || elapsed > 1.0f)
+        if (ScreenManager.Instance.OutScreen(transform.position) || elapsed > 1.0f)
         {
             Destroy(gameObject);
         }

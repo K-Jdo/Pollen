@@ -13,10 +13,12 @@ public class ResultManager : MonoBehaviour
     {
         if (ScreenManager.Instance.IsWin)
         {
+            SoundManager.Instance.PlaySound(SoundManager.SoundName.clear);
             text.text = "WIN";
         }
         else
         {
+            SoundManager.Instance.PlaySound(SoundManager.SoundName.defeat);
             text.text = "PANDEMIC";
         }
     }

@@ -27,7 +27,7 @@ public class ScreenManager : SingletonMonoBehaviour<ScreenManager>
     /// 主に弾など
     /// </summary>
     /// <param name="position"></param>
-    public bool OutOfScreen(Vector2 position)
+    public bool OutScreen(Vector2 position)
     {
         // 画面外に出たら消える
         if(position.x > Screen_max_size.x || position.x < Screen_min_size.x
@@ -45,18 +45,19 @@ public class ScreenManager : SingletonMonoBehaviour<ScreenManager>
     /// </summary>
     /// <param name="position"></param>
     /// <param name="size"></param>
-    public Vector2 RangeOfScreen(Vector2 position, Vector2 size)
+    public Vector2 RangeScreen(Vector2 position, Vector2 size)
     {
         return new Vector2(Mathf.Clamp(position.x, Screen_min_size.x + size.x, Screen_max_size.x - size.x),
            Mathf.Clamp(position.y, Screen_min_size.y + size.y, Screen_max_size.y - size.y));
     }
+
     /// <summary>
     /// 画面外に出ないようにする処理
     /// (座標、CircleColliderの半径)
     /// </summary>
     /// <param name="position"></param>
     /// <param name="radius"></param>
-    public Vector2 RangeOfScreen(Vector2 position, float radius)
+    public Vector2 RangeScreen(Vector2 position, float radius)
     {
         return new Vector2(Mathf.Clamp(position.x, Screen_min_size.x + radius, Screen_max_size.x - radius),
            Mathf.Clamp(position.y, Screen_min_size.y + radius, Screen_max_size.y - radius));
