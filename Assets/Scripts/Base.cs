@@ -11,15 +11,20 @@ public class Base : MonoBehaviour
 
     public Sprite sprite;
 
+    private float hit;
+    
     void Start()
     {
         spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
     void Update()
     {
+        City city = new City();
+        hit = city.hp;
         // if文の中に画像を変える条件を書く
-        if(Input.GetKeyDown("joystick button 2"))
+        if(hit < 30)
         {
+            GetComponent<CircleCollider2D>().enabled = false;
             spriteRenderer.sprite = sprite;
         }        
     }
