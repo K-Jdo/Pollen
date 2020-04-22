@@ -20,7 +20,7 @@ public class Base : MonoBehaviour
     void Update()
     {
         City city = new City();
-        hit = city.hp;
+        hit = city.HitPoint;
         // if文の中に画像を変える条件を書く
         if(hit < 30)
         {
