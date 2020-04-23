@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-// シングルトンの実装
+// シングルトンの実装するクラス
 public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;

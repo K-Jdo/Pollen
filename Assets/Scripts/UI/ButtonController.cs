@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ボタンのコントロール
+// ボタンのコントロールするクラス
 public class ButtonController : MonoBehaviour
 {
     [SerializeField] private ButtonController button = default;
